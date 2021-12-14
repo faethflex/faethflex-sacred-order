@@ -1,7 +1,7 @@
 # faethflex-sacred-order
 faethflex-sacred-order
 
-- newly packaged for Docker
+- newly packaged for Webpack
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
