@@ -3,7 +3,7 @@
     "license": "UNLICENSED",
     "scripts": {
         "build": "webpack --config ./bundler/webpack.prod.js",
-        "prestart": "npm run build",
+        "start": "npm run dev",
         "dev": "webpack serve --config ./bundler/webpack.dev.js"
     },
     "dependencies": {
