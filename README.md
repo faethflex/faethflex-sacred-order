@@ -7,7 +7,6 @@ faethflex-sacred-order
 Download [Node.js](https://nodejs.org/en/download/).
 Run these commands:
 
-## Optional
 ``` bash
 
 # Install dependencies (only the first time)
