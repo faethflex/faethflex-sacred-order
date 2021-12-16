@@ -17,4 +17,7 @@ npm start
 
 # Deploy to Google Cloud App Engine
 gcloud app deploy
+
+# Configure a Cloud Build trigger to automate builds and deployments on commits. Use the below command to view the build that was deployed in the browser
+gcloud app browse
 ```
