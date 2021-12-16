@@ -1,7 +1,7 @@
 # faethflex-sacred-order
 faethflex-sacred-order
 
-- newly packaged for Webpack
+- newly packaged with webpack + express.js
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
