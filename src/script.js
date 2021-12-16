@@ -20,10 +20,15 @@ const sizes = {
 };
 
 // Camera
-// const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 100);
-const aspectRatio = sizes.width / sizes.height;
-const camera = new THREE.OrthographicCamera(- 1 * aspectRatio, 1 * aspectRatio, 1, - 1, 0.1, 100);
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 100);
+
+// const aspectRatio = sizes.width / sizes.height;
+// const camera = new THREE.OrthographicCamera(- 1 * aspectRatio, 1 * aspectRatio, 1, - 1, 0.1, 100);
+
+// camera.position.x = 2
+// camera.position.y = 2
 camera.position.z = 3;
+camera.lookAt(mesh.position);
 scene.add(camera);
 
 // Renderer
@@ -41,20 +46,28 @@ const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime();
 
-    // Update objects
-    camera.position.x = Math.cos(elapsedTime)
-    camera.position.y = Math.sin(elapsedTime)
-    camera.lookAt(mesh.position)
-
-    // Update objects
-    mesh.rotation.y = elapsedTime;
-    mesh.position.x = Math.cos(elapsedTime);
-    mesh.position.y = Math.sin(elapsedTime);
+    // Update camera
+    camera.position.x = cursor.x;
+    camera.position.y = cursor.y;
 
     // Render
     renderer.render(scene, camera);
 
     window.requestAnimationFrame(tick);
-}
+};
 
 tick();
+
+// Cursor
+const cursor = {
+    x: 0,
+    y: 0
+};
+
+window.addEventListener('mousemove', (event) =>
+{
+    cursor.x = event.clientX / sizes.width - 0.5;
+    cursor.y = - event.clientY / sizes.height - 0.5;
+
+    console.log(cursor.x, cursor.y);
+});
