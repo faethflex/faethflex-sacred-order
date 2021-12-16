@@ -2,9 +2,8 @@
     "repository": "#",
     "license": "UNLICENSED",
     "scripts": {
-        "build": "webpack --config ./bundler/webpack.prod.js",
-        "start": "npm run dev",
-        "dev": "webpack serve --config ./bundler/webpack.dev.js"
+        "bundle": "webpack --config webpack.config.js",
+        "prestart": "npm run bundle"
     },
     "dependencies": {
         "@babel/core": "^7.15.8",
