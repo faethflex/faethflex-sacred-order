@@ -5,15 +5,17 @@ faethflex-sacred-order
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+Run these commands:
 
+## Optional
 ``` bash
+
 # Install dependencies (only the first time)
 npm install
 
-# Run the local server at localhost:8080
-npm run dev
+# Run the local server at localhost:8080 - this also builds the app for production in the dist/ directory
+npm start
 
-# Build for production in the dist/ directory
-npm run build
+# Deploy to Google Cloud App Engine
+gcloud app deploy
 ```
