@@ -20,7 +20,7 @@ const sizes = {
 };
 
 // Camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 100);
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 1000);
 
 // const aspectRatio = sizes.width / sizes.height;
 // const camera = new THREE.OrthographicCamera(- 1 * aspectRatio, 1 * aspectRatio, 1, - 1, 0.1, 100);
@@ -40,7 +40,7 @@ const cursor = {
 window.addEventListener('mousemove', (event) =>
 {
     cursor.x = event.clientX / sizes.width - 0.5;
-    cursor.y = - event.clientY / sizes.height - 0.5;
+    cursor.y = - (event.clientY / sizes.height - 0.5);
 
     console.log(cursor.x, cursor.y);
 });
