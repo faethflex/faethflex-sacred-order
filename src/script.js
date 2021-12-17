@@ -45,6 +45,20 @@ window.addEventListener('mousemove', (event) =>
     console.log(cursor.x, cursor.y);
 });
 
+//Touch
+const touch = {
+    x: 0,
+    y: 0
+};
+
+window.addEventListener('touchmove', (event) =>
+{
+    touch.x = event.clientX / sizes.width - 0.5;
+    touch.y = - (event.clientY / sizes.height - 0.5);
+
+    console.log(touch.x, touch.y);
+});
+
 // Renderer
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas
@@ -63,6 +77,8 @@ const tick = () =>
     // Update camera
     camera.position.x = cursor.x * 5;
     camera.position.y = cursor.y * 5;
+    camera.position.x = touch.x * 5;
+    camera.position.y = touch.y * 5;
     camera.lookAt(mesh.position);
 
     // Render
