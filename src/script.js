@@ -31,6 +31,20 @@ camera.position.z = 3;
 camera.lookAt(mesh.position);
 scene.add(camera);
 
+// Cursor
+const cursor = {
+    x: 0,
+    y: 0
+};
+
+window.addEventListener('mousemove', (event) =>
+{
+    cursor.x = event.clientX / sizes.width - 0.5;
+    cursor.y = - event.clientY / sizes.height - 0.5;
+
+    console.log(cursor.x, cursor.y);
+});
+
 // Renderer
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas
@@ -57,17 +71,3 @@ const tick = () =>
 };
 
 tick();
-
-// Cursor
-const cursor = {
-    x: 0,
-    y: 0
-};
-
-window.addEventListener('mousemove', (event) =>
-{
-    cursor.x = event.clientX / sizes.width - 0.5;
-    cursor.y = - event.clientY / sizes.height - 0.5;
-
-    console.log(cursor.x, cursor.y);
-});
