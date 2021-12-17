@@ -16,9 +16,9 @@ scene.add(mesh);
 
 // Sizes
 const sizes = {
-    width: 800,
-    height: 600
-};
+    width: window.innerWidth,
+    height: window.innerHeight
+}
 
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 1000);
