@@ -1,6 +1,7 @@
-import './style.css'
-import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import './style.css';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import * as dat from 'lil-gui';
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl');
@@ -65,11 +66,6 @@ window.addEventListener('dblclick', () =>
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 1000);
 
-// const aspectRatio = sizes.width / sizes.height;
-// const camera = new THREE.OrthographicCamera(- 1 * aspectRatio, 1 * aspectRatio, 1, - 1, 0.1, 100);
-
-// camera.position.x = 2
-// camera.position.y = 2
 camera.position.z = 3;
 camera.lookAt(mesh.position);
 scene.add(camera);
@@ -103,3 +99,8 @@ const tick = () =>
 };
 
 tick();
+
+/**
+ * Debug
+ */
+const gui = new dat.GUI();
