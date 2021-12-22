@@ -104,4 +104,9 @@ tick();
  * Debug
  */
 const gui = new dat.GUI();
-gui.add(mesh.position, 'y');
+gui
+    .add(mesh.position, 'y')
+    .min(- 3)
+    .max(3)
+    .step(0.01)
+    .name('elevation');
