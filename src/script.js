@@ -104,3 +104,4 @@ tick();
  * Debug
  */
 const gui = new dat.GUI();
+gui.add(mesh.position, 'y');
